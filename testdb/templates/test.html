@@ -1,0 +1,32 @@
+{% load static %}
+{% load custom_filters %}
+
+<!DOCTYPE html>
+<html>
+
+<style>
+
+.row{
+    display: flex;
+}
+
+</style>
+
+<body>
+        <audio id="abby" src= "/static/Title_Abbey.mp3" preload="auto">
+            Your browser does not support the audio element.</audio>
+        <button type="button" onclick= "clickAbby('abby')">
+            <img src= "/static/abbeys_farm_front_1200.jpg" style="width:100%"> 
+        </button>
+</body>
+
+<script>
+    var files = JSON.parse('{{ Students|safe }}');
+    
+    function clickAbby(id){
+        document.getElementById('abby').play();
+        // window.location = "teachers/" + id;
+    }
+
+</script>
+</html>
