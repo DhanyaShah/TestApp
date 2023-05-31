@@ -8,11 +8,11 @@ import json
 
 def home_page(request):
     template = loader.get_template('test.html')
-    # teacher_objs = Teacher.objects.get(id=9)
-    # json_data = json.dumps(teacher_objs.students)
-    context = {}
-    # 'Teachers': teacher_objs,
-    # 'Students': json_data,}
+    teacher_objs = Teacher.objects.get(id=1)
+    json_data = json.dumps(teacher_objs.students)
+    context = {
+    'Teachers': teacher_objs,
+    'Students': json_data,}
     return HttpResponse(template.render(context, request))
 
 def t_detail(request, teacher_id):
